@@ -1,11 +1,13 @@
 export default {
-  state: {
-    articles: [
-      {
-        slug: "Hello",
-        title: "Hello World",
-        content: "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
-      },
-    ],
-  },
+  state() {
+    return {
+      articles: [
+        {
+          slug: "Hello",
+          title: "Hello World",
+          content: "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+        },
+      ],
+    }
+  }
 };

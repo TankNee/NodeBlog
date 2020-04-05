@@ -1,66 +1,43 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxtblog
-      </h1>
-      <h2 class="subtitle">
-        My superior Nuxt.js project
-      </h2>
-      <div class="links">
-        <nuxt-link to="/articles/Hello" class="button--green">文章</nuxt-link>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+    <div class="container">
+        <nav class="header">
+            <Header />
+        </nav>
+        <div class="main">
+            <IndexAvatar />
+        </div>
+        <div class="footer">
+            <Footer />
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
-
+import Header from "~/components/ui/Header.vue";
+import Footer from "~/components/ui/Footer.vue";
+import IndexAvatar from "~/components/ui/IndexAvatar.vue";
 export default {
-  components: {
-    Logo,
-  },
+    components: {
+        Header,
+        IndexAvatar,
+        Footer,
+    },
 };
 </script>
 
-<style>
+<style scoped>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    /* margin: 0 auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: -webkit-fill-available;
+    padding: 0rem 2rem;
 }
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.header {
+    height: 6rem;
+    width: 100%;
 }
 </style>
