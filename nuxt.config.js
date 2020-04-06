@@ -38,11 +38,19 @@ module.exports = {
     /*
      ** Global CSS
      */
-    css: ["element-ui/lib/theme-chalk/index.css", "assets/style.css","assets/theme/default.css"],
+    css: [
+        "element-ui/lib/theme-chalk/index.css",
+        "assets/style.css",
+        "assets/theme/default.css",
+    ],
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: ["@/plugins/element-ui", "~/plugins/axios"],
+    plugins: [
+        { src: "@/plugins/element-ui", ssr: false },
+        { src: "~/plugins/axios", ssr: true },
+        { src: "~/plugins/MarkdownItVue", ssr: false },
+    ],
     /*
      ** Nuxt.js dev-modules
      */
@@ -50,7 +58,7 @@ module.exports = {
     /*
      ** Nuxt.js modules
      */
-    modules: ["@nuxtjs/axios"],
+    modules: ["@nuxtjs/axios", "@nuxtjs/markdownit"],
     /*
      ** Build configuration
      */

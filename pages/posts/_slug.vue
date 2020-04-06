@@ -23,8 +23,7 @@ import { mapState } from "vuex";
 import axios from "~/plugins/axios";
 import Header from "~/components/ui/Header.vue";
 import Footer from "~/components/ui/Footer.vue";
-import MarkdownItVue from "markdown-it-vue";
-import "markdown-it-vue/dist/markdown-it-vue.css";
+
 export default {
     async asyncData({ params }) {
         let article = await axios.request({
@@ -58,7 +57,6 @@ export default {
         };
     },
     components: {
-        MarkdownItVue,
         Header,
         Footer,
     },
@@ -92,6 +90,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 64%;
+    min-width: 64%;
 }
 .md-body {
     word-wrap: break-word;
