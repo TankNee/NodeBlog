@@ -1,3 +1,4 @@
+const config = require("./config");
 module.exports = {
     mode: "universal",
     /*
@@ -37,7 +38,7 @@ module.exports = {
     /*
      ** Global CSS
      */
-    css: ["element-ui/lib/theme-chalk/index.css", "assets/style.css"],
+    css: ["element-ui/lib/theme-chalk/index.css", "assets/style.css","assets/theme/default.css"],
     /*
      ** Plugins to load before mounting the App
      */
@@ -59,5 +60,10 @@ module.exports = {
          ** You can extend webpack config here
          */
         extend(config, ctx) {},
+    },
+    env: {
+        baseUrl: `http${config.server.ssl ? "s" : ""}://${config.server.host}:${
+            config.server.port
+        }/${config.server.info.apiVersion}/api`,
     },
 };

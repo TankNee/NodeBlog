@@ -60,6 +60,24 @@ const getArticleDetail = (id) => {
     });
 };
 /**
+ * 通过缩略名获取文章
+ * @param {string} slug 
+ */
+const getArticleDetailBySlug = (slug) => {
+    return new Promise((resolve, reject) => {
+        Article
+            .findOne({
+                where: {
+                    slug: slug
+                }
+            }).then(res => {
+            resolve(res);
+        }).catch(err => {
+            reject(err);
+        });
+    });
+};
+/**
  * 更新文章
  * @param article
  * @returns {Promise<unknown>}
@@ -133,4 +151,4 @@ exports.addArticle = addArticle;
 exports.getArticleDetail = getArticleDetail;
 exports.updateArticle = updateArticle;
 exports.deleteArticle = deleteArticle;
-// exports.getTimeLineItems = getTimeLineItems;
+exports.getArticleDetailBySlug = getArticleDetailBySlug;

@@ -13,9 +13,12 @@ module.exports = {
         },
     },
     server: {
-        version: "0.0.1",
-        url: "127.0.0.1:3000",
-        apiVersion: "v1",
+        info: {
+            appVersion: "0.0.1",
+            apiVersion: "v1",
+        },
+        host: "127.0.0.1",
+        port: "3000",
         ssl: false,
     },
 };

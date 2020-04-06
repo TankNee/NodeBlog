@@ -4,41 +4,40 @@
  * @Date: 2/2/2020 11:25 AM
  **/
 const config = require("../../../config");
+const consola = require("consola");
 const basicInfo = {
-    ...config.server,
+    ...config.server.info,
 };
 /**
  * 获取成功方法
- * @param code 返回代码
- * @param params 返回参数
- * @param msg 返回携带的信息
  * @returns {{msg: string, code: number, data: *}}
+ * @param params
+ * @param msg
+ * @param code
  */
 const success = (params, msg = "请求成功", code = 200) => {
+    consola.success(msg);
     return {
         ...basicInfo,
         code: code,
-        data: {
-            ...params,
-            message: msg,
-        },
+        message: msg,
+        data: params,
     };
 };
 /**
  * 获取失败方法
- * @param code 返回代码
- * @param params 返回参数
- * @param msg 返回携带的信息
  * @returns {{msg: string, code: number, data: *}}
+ * @param params
+ * @param msg
+ * @param code
  */
 const fail = (params, msg = "请求失败", code = 1000) => {
+    consola.error(msg);
     return {
         ...basicInfo,
         code: code,
-        data: {
-            ...params,
-            message: msg,
-        },
+        message: msg,
+        data: params,
     };
 };
 module.exports = {
